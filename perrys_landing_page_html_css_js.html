@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perrys — Perritos clásicos en Pozuelo</title>
+  <meta name="description" content="Perrys: perritos calientes clásicos estilo Nebraska en Pozuelo de Alarcón, a un paso de Aravaca. Pan tipo bollo, salchicha clavada y nuestras dos salsas míticas." />
+  <meta name="theme-color" content="#B22222" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Perrys — Perritos clásicos en Pozuelo" />
+  <meta property="og:description" content="Pan estilo bollo, salchicha clavada y dos salsas que harán historia. ¡Haz tu pedido!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo-perrys.png" />
+  <meta property="og:locale" content="es_ES" />
+
+  <style>
+    :root{
+      --bg:#0c0b0b;          /* fondo principal */
+      --paper:#111013;       /* cartas/contraste */
+      --brand:#C73D2A;       /* rojo vintage */
+      --brand-2:#E0B24D;     /* mostaza */
+      --cream:#FFE9C8;       /* crema pan */
+      --text:#F8F7F4;        /* texto base */
+      --muted:#B3ACA4;       /* texto secundario */
+      --ok:#41B66E;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(231, 179, 77,.15), transparent 40%), var(--bg);
+      color:var(--text);
+      line-height:1.4;
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(12,11,11,.8);backdrop-filter: blur(8px); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:44px;height:44px;object-fit:contain;display:block}
+    .brand strong{font-weight:800;letter-spacing:.5px}
+    .tag{font-size:.78rem;color:var(--muted)}
+    .nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    .nav a.link{padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--text);opacity:.9}
+    .nav a.link:hover{background:rgba(255,255,255,.08)}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;border:none;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;transition:.2s; text-decoration:none}
+    .btn-primary{background:linear-gradient(180deg,var(--brand),#9f2f1f);color:white;box-shadow:var(--shadow)}
+    .btn-primary:hover{transform:translateY(-1px);}
+    .btn-ghost{background:rgba(255,255,255,.06);color:var(--text)}
+
+    /* Hero */
+    .hero{padding:56px 0 28px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h1{font-size: clamp(32px, 5vw, 56px); line-height:1.05;margin:0 0 10px}
+    .hero p{font-size: clamp(16px, 2.2vw, 20px);color:var(--muted);margin:0 0 18px}
+    .hero-card{background:linear-gradient(180deg, #161417, #0f0e10);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .promo{display:inline-flex;align-items:center;gap:10px;background:rgba(199,61,42,.12);border:1px dashed rgba(199,61,42,.6);color:#ffd6ce;padding:8px 12px;border-radius:10px;font-weight:700}
+    .hero-visual{display:grid;place-items:center}
+    .hero-visual .logo{width:min(360px,80%);aspect-ratio:1/1; object-fit:contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,.5));}
+
+    /* Menu */
+    .section{padding:40px 0}
+    .section h2{font-size: clamp(24px, 4vw, 36px);margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column: span 6; background:var(--paper); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .price{font-weight:800;color:var(--brand-2)}
+    .badge{font-size:.75rem;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);}
+
+    /* Info */
+    .info{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .info .box{grid-column: span 6; background:var(--paper);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px}
+    .hours li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid .card{grid-column: span 12}
+      .info .box{grid-column: span 12}
+      .nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <!-- Reemplaza la ruta de la imagen por tu logo real -->
+        <img src="/logo-perrys.png" alt="Logo Perrys" />
+        <div>
+          <strong>Perrys</strong>
+          <div class="tag">Perritos clásicos • Pozuelo</div>
+        </div>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a class="link" href="#menu">Menú</a></li>
+          <li><a class="link" href="#pedido">Pedir</a></li>
+          <li><a class="link" href="#ubicacion">Ubicación</a></li>
+          <li><a class="link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="promo" role="note">🎉 Inauguración: papas gratis con tu perrito (1er mes)</span>
+          <h1>Perritos calientes <em>clásicos</em> estilo Madrid</h1>
+          <p>Pan tipo bollo, salchicha clavada y nuestras dos salsas míticas. A un paso de Aravaca.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="#pedido">Hacer pedido</a>
+            <a class="btn btn-ghost" href="#menu">Ver menú</a>
+          </div>
+          <p class="tag" style="margin-top:8px">Precio medio: 4–6 €</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Si subes el logo al mismo servidor, cámbialo por su ruta correcta -->
+          <img class="logo" src="/logo-perrys.png" alt="Perrys, la mascota saltarina" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <div class="container">
+        <h2>Menú</h2>
+        <div class="grid">
+          <article class="card" aria-label="Perrito Clásico">
+            <header style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Perrito Clásico</h3>
+              <span class="price">4,00 €</span>
+            </header>
+            <p>Salchicha clavada en pan tipo bollo + salsa roja y mostaza especial.</p>
+            <span class="badge">Best seller</span>
+          </article>
+          <article class="card" aria-label="Perrito Doble">
+            <header style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Perrito Doble</h3>
+              <span class="price">5,50 €</span>
+            </header>
+            <p>Doble salchicha y extra de salsas. Para hambre de verdad.</p>
+            <span class="badge">Extra sabroso</span>
+          </article>
+          <article class="card" aria-label="Perrito Veggie">
+            <header style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Perrito Veggie</h3>
+              <span class="price">5,50 €</span>
+            </header>
+            <p>Salchicha vegetal en pan de bollo. Misma magia, 0% carne.</p>
+            <span class="badge">Opciones veganas</span>
+          </article>
+          <article class="card" aria-label="Papas Perrys">
+            <header style="display:flex;justify-content:space-between;align-items:center">
+              <h3>Papas Perrys</h3>
+              <span class="price">2,50 €</span>
+            </header>
+            <p>Ración crujiente para acompañar. Promo: ¡gratis con tu perrito el 1er mes!</p>
+            <span class="badge">Promo</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEDIDO / CTA -->
+    <section id="pedido" class="section" aria-label="Pedir online" style="padding-top:0">
+      <div class="container">
+        <div class="card" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
+          <div>
+            <h2>Pide ahora</h2>
+            <p class="tag">Estamos en Uber Eats. Muy pronto: pedidos directos.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <!-- Reemplaza el href con tu URL real de Uber Eats -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Uber Eats</a>
+            <a class="btn btn-ghost" href="#contacto">Teléfono</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO: Horarios & Ubicación -->
+    <section id="ubicacion" class="section">
+      <div class="container info">
+        <div class="box">
+          <h2>Horarios</h2>
+          <ul class="hours" aria-label="Horarios semanales">
+            <li><span>Lun–Jue</span><span>13:00–16:00 · 19:30–23:00</span></li>
+            <li><span>Vie</span><span>13:00–16:00 · 19:30–00:00</span></li>
+            <li><span>Sáb</span><span>13:30–00:00</span></li>
+            <li><span>Dom</span><span>13:30–22:30</span></li>
+          </ul>
+          <p class="tag">* Ajusta estos horarios según apertura real.</p>
+        </div>
+        <div class="box" id="contacto">
+          <h2>Ubicación & Contacto</h2>
+          <p><strong>Dirección:</strong> Pozuelo de Alarcón (cerca de Aravaca).<br/>
+          <strong>Tel:</strong> <a href="tel:+34910000000">+34 910 00 00 00</a><br/>
+          <strong>Email:</strong> <a href="mailto:hola@perrys.es">hola@perrys.es</a></p>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06)">
+            <!-- Sustituye la ubicación por tu dirección exacta en Google Maps -->
+            <iframe title="Mapa Perrys" src="https://www.google.com/maps/embed?pb=" width="100%" height="260" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Perrys. Todos los derechos reservados.</div>
+      <div class="tag">Hecho con ❤️ en Pozuelo</div>
+    </div>
+  </footer>
+
+  <!-- Datos estructurados LocalBusiness para SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Perrys",
+    "servesCuisine": ["Perritos calientes", "Hot dogs"],
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pozuelo de Alarcón",
+      "addressRegion": "Madrid",
+      "addressCountry": "ES"
+    },
+    "url": "https://perrys.example",
+    "telephone": "+34 910000000"
+  }
+  </script>
+  <script>
+    // Año del footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
